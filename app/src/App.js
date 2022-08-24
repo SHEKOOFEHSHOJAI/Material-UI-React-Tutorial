@@ -8,20 +8,29 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLable from "@material-ui/core/FormControlLabel";
 import TextField from '@material-ui/core/TextField';
-import {makeStyles} from '@material-ui/core/styles';
+import {makeStyles,ThemeProvider,createTheme} from '@material-ui/core/styles';
+import { orange } from '@material-ui/core/colors';
 
 const useStyle=makeStyles({
   root:{
-    background:'linear-gradient(45deg,#333,3999)',
+    background:'linear-gradient(45deg,#FE6BBB,#999)',
     border:0,
+    marginBottom:15,
     borderRadius:15,
     color:'white',
-    padding:'0 30px'
+    padding:'5px 30px'
+  }
+})
+const theme=createTheme({
+  palette:{
+    primary:{
+      main:orange[500]
+    }
   }
 })
 function ButtonStyle() {
   const classes=useStyle()
-  return <Button className='classes.root'>Test style button</Button>
+  return <Button className={classes.root}>Test style button</Button>
 }
 function CheckboxExample() {
   const[checked,setChecked]=React.useState(true)
@@ -59,6 +68,7 @@ function CheckboxExample() {
 function App() {
 
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
       <header className="App-header">
         <ButtonStyle/>
@@ -87,7 +97,9 @@ function App() {
 
       </header>
     </div>
+    </ThemeProvider>
   );
 }
 
 export default App;
+// https://www.youtube.com/watch?v=vyJU9efvUtQ
