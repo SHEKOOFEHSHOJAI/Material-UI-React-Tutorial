@@ -18,6 +18,9 @@ import Typography from '@material-ui/core/Typography';
 // container
 import Container from '@material-ui/core/Container';
 
+// paper for grid
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 const useStyle = makeStyles({
   root: {
@@ -98,6 +101,21 @@ function App() {
               shekoofeh shojai
             </Typography>
             <ButtonStyle />
+            <Grid container spacing={4} justifyContent="center">
+
+              <Grid item xs={12} sm={6} xl={3}>
+                <Paper style={{ height: 75, width:" 100%" }} />
+              </Grid>
+
+              <Grid item xs={3} xl={3} >
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+
+              <Grid item  xs={3} xl={3}>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+
+            </Grid>
             <TextField variant='filled' color="secondary" type="time" label="the time" />
             < CheckboxExample />
 
